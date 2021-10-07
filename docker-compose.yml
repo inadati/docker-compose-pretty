@@ -1,0 +1,10 @@
+version: "3"
+services:
+  alpine1:
+    image: ${DOCKER_REGISTRY}/${DOCKER_REPOSITORY}/alpine1:${DOCKER_TAG}
+    container_name: alpine1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ./@docker/env/${TARGET_ENV}/container.env

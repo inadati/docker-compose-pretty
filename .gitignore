@@ -1,0 +1,4 @@
+!.keep
+*.env
+!@docker/env/local/*.env
+@docker/log/*.log
