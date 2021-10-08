@@ -10,6 +10,11 @@ if [ $TARGET_ENV = "local" ]; then
     exit 1
 fi
 
+if [ ! -f "./@docker/env/${TARGET_ENV}/compose.env" ]; then
+    echo "./@docker/env/${TARGET_ENV}/compose.env が存在しません。"
+    exit 1
+fi
+
 docker-compose --env-file "./@docker/env/${TARGET_ENV}/compose.env" build
 docker-compose --env-file "./@docker/env/${TARGET_ENV}/compose.env" push
 
